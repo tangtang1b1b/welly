@@ -26,6 +26,38 @@
         return lastName ? `${firstName} ${lastName}` : `${firstName}`;
         // 其實只要判斷後面的lastName使否有值就可以了，所以就直接用三元去判斷有無lastName
       }
+
+      // 問題：在React中，如何根據條件渲染兩種不同的內容？
+      function ConditionalRendering({ isLoggedIn }) {
+        return(
+          <div>
+            {isLoggedIn ? <div>true</div> : <div>false</div>}
+          </div>
+        );
+      }
+
+      // 5. React: 組件
+      class Page extends React.Component {
+        constructor(props){
+          super(props);
+          this.state = {
+            count: 0
+          }
+        }
+      
+        render() {
+          return (
+            <div>
+              {this.state.count}
+              <button onClick={() => this.setState({ count: this.state.count + 1 })}>+</button>
+              <button onClick={() => this.setState({ count: this.state.count - 1 })}>-</button>
+            </div>
+          );
+        }
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('root')); 
+      root.render(<Page />);
     </script>
   </body>
 </html>
