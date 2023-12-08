@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welly</title>
+  </head>
+  <body>
+    <script>
+      // ------ 1.JavaScript: 字串反轉 ------
+      function reverseString(str) {
+        return [...str].reverse().join('');
+      }
+      console.log(reverseString('Hello')); // 預期輸出: "olleH”
+
+      // ------ 2. JavaScript: 陣列過濾 ------
+      function filterNumbersGreaterThanFive(numbers) {
+        return numbers.filter((num) => num > 5);
+      }
+
+      const numbers = [2, 8, 4, 10, 1, 7];
+      console.log(filterNumbersGreaterThanFive(numbers)); // 預期輸出: [8, 10, 7]
+
+      // ------ 3. JavaScript: 重構 ------
+      function formatName(firstName, lastName) {
+        return lastName ? `${firstName} ${lastName}` : `${firstName}`;
+        // 其實只要判斷後面的lastName使否有值就可以了，所以就直接用三元去判斷有無lastName
+      }
+    </script>
+  </body>
+</html>
